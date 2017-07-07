@@ -1,0 +1,4 @@
+CREATE TABLE "users" ("id" SERIAL PRIMARY KEY NOT NULL, "username" TEXT NOT NULL, "hash" TEXT NOT NULL, "cash" NUMERIC NOT NULL DEFAULT 10000.00 );
+CREATE UNIQUE INDEX "username" ON "users" ("username");
+CREATE TABLE "portfolio" ("id" SERIAL PRIMARY KEY NOT NULL, "username" TEXT, "symbol" TEXT, "shares" INTEGER);
+CREATE TABLE "history" ("id" SERIAL PRIMARY KEY NOT NULL, "username" TEXT, "time" TEXT, "symbol" TEXT, "shares" INTEGER);
