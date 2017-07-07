@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="4"></td>
+            <td style="font-weight:bold;">{{total}}</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        
+        {% for i in range(length) %}
+            
+            <tr>
+                <td>{{dict['symbol'][i]}}</td>
+                <td>{{dict['name'][i]}}</td>
+                <td>{{dict['shares'][i]}}</td>
+                <td>{{dict['price'][i]}}</td>
+                <td>{{dict['total'][i]}}</td>
+            </tr>
+            
+        {% endfor %}
+        
+        <tr>
+            <td colspan="4">CASH</td>
+            <td>{{cash}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
